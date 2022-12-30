@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "header"
+    "contenido-1"
+    "contenido-1"
+    "contenido-2"
+    "contenido-2"
+    "footer";
+    gap: 20px;
+}
+
+header{
+    grid-area: header;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    width: 150px;
+}
+
+section img{
+    width: 300px;
+}
+
+.nosotros{
+    grid-area: contenido-1;
+}
+
+.ubi{
+    grid-area: contenido-2;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
