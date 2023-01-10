@@ -9,46 +9,33 @@ body{
     grid-template-areas: 
     "header"
     "h1"
+    "carousel"
     "contenido-1"
     "contenido-2"
     "contenido-3"
     "contenido-4"
     "footer";
     gap: 20px;
-    background-image: url(/img/fondo.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vh;
+    background: linear-gradient(270deg, rgba(255,231,161,1) 0%, rgba(180,255,251,1) 100%);
 }
 
-.contenido{
-    height: 100vh;
-}
-
-.producciones{
-    background: linear-gradient(to bottom right, rgb(255, 236, 180), rgb(193, 166, 86))
+.carousel, .carousel-inner > .item > img {
+    margin: auto;
+    width: 50%;
 }
 
 header{
     grid-area: header;
     background-color: rgb(235, 211, 132);
     border-bottom: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: space-evenly;
-    height: 100px;
-}
-
-.logoContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
 .logo{
-    width: 150px;
+    width: 200px;
 }
 
 ul{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -58,12 +45,9 @@ ul li{
     list-style-type: none;
 }
 
-a{
+.nav-link{
     text-decoration: none;
     font-family: 'Staatliches', cursive;
-    background: linear-gradient(to bottom right, rgb(239, 193, 42), rgb(95, 196, 255));
-    border: 1px solid black;
-    color: black;
     padding: 3px;
 }
 
@@ -85,8 +69,22 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(64, 64, 64, 0.465);
-    border-radius: 10%;
+    background-color: rgba(64, 64, 64, 0.476);
+    border: 3px solid #000;
+}
+
+.tiendaContainer, .serviciosContainer{
+    min-width: 200px;
+    max-width: 700px;
+}
+
+.tiendaContainer{
+    margin-bottom: 15px;
+}
+
+.lavado, .coloracion{
+    margin: auto;
+    margin-top: 20px;
 }
 
 .container h2{
@@ -99,7 +97,11 @@ h1{
     padding: 0 0 10px 20px;
 }
 
-section img, main img{
+.carousel{
+    grid-area: carousel;
+}
+
+section img, main img, .container img{
     width: 80%;
     max-width: 400px;
     padding: 15px;
@@ -131,30 +133,6 @@ section img, main img{
     margin-bottom: 27px;
 }
 
-.cortes{
-    grid-area: contenido-1;
-}
-
-.lavado{
-    grid-area: contenido-2;
-}
-
-.coloracion{
-    grid-area: contenido-3;
-}
-
-.pulverizador{
-    grid-area: contenido-1;
-}
-
-.jabon-afeitar{
-    grid-area: contenido-2;
-}
-
-.combo{
-    grid-area: contenido-3;
-}
-
 .grilla{
     display: grid;
     grid-template-columns: 1fr;
@@ -168,9 +146,8 @@ section img, main img{
 
 .cortes-img{
     margin: 10px;
-    width: 30%;
     max-width: 300px;
-    height: min-content;
+    width: 30%;
     padding: 0;
     border: 4px solid black;
     box-shadow: 10px 10px 40px 0 #000;
@@ -187,7 +164,7 @@ footer{
     grid-area: footer;
     height: 120px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(16, 44, 106);
@@ -201,4 +178,103 @@ footer p{
     padding: 0 20px 0 0;
 }
 
+@media (min-width: 768px){
+    body{
+        background: linear-gradient(90deg, rgba(255,231,161,1) 0%, rgba(180,255,251,1) 50%, rgba(255,231,161,1) 100%);
+    }
+    .nav-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    }
+    .logo{
+        width: 200px;
+    }
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+        padding: 7px;
+        font-size: 20px;
+        background: linear-gradient(to bottom right, rgb(239, 193, 42), rgb(95, 196, 255));
+        border: 1px solid black;
+        color: black;
+    }
+}
 
+@media (min-width: 1024px){
+    body{
+        background: linear-gradient(135deg, rgba(180,255,251,1) 0%, rgba(255,231,161,1) 100%);
+    }
+    h1{
+        margin: 50px;
+        font-size: 64px;
+    }
+
+    /* este grid area es para el index */
+    .inicio{
+        grid-template-areas: 
+        "header header"
+        "carousel carousel"
+        "contenido-1 contenido-2"
+        "contenido-3 contenido-4"
+        "footer footer"
+    }
+    .nosotros, .pagos, .horarios, .ubi{
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* acá usé grid para ordenar la sección "servicios". */
+    .servicios-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .cortes{
+        grid-column: 3 / 4;
+        grid-row: 1;
+    }
+    .lavado{
+        grid-column: 4 / 5;
+        grid-row: 2;
+    }
+    .coloracion{
+        grid-column: 3 / 4;
+        grid-row: 3;
+    }
+    .serviciosContainer{
+        width: 40vw;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+    }
+    .serviciosContainer img{
+        width: max-content;
+        overflow: hidden;
+    }
+    
+    /* esto es para la seccion tienda y producciones */
+    .grilla{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .container{
+        background-color: rgba(0, 0, 0, 0.324);
+        border: 3px solid black;
+    }
+    .historia, .historia2{
+        display: flex;
+        flex-direction: row;
+        min-height: 30vh;
+        border-radius: 0;
+    }
+    .cortes-img:hover{
+        transform: scale(1.2);
+    }
+    .cortes-img{
+        transition: 1s all;
+    }
+}

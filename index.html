@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,39 +12,78 @@
     <link rel="shortcut icon" href="./img/uslogochico.ico" type="image/x-icon">
     <title>UrbanStyle - Peluquería</title>
 </head>
-<body>
+<body class="inicio">
     <header>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
                 <div class="logoContainer">
-                    <img class="logo" src="./img/uslogo.png" alt="Logo escrito de Urban Style">
+                    <img src="/img/uslogo.png" class="d-inline-block align-text-top logo">
                 </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.html">INICIO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navContainer" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                         </li>
-                        <li>
-                            <a href="./section/historia.html">HISTORIA</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/section/historia.html">Historia</a>
                         </li>
-                        <li>
-                            <a href="./section/servicios.html">SERVICIOS</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/section/servicios.html">Servicios</a>
                         </li>
-                        <li>
-                            <a href="./section/producciones.html">PRODUCCIONES</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/section/producciones.html">Producciones</a>
                         </li>
-                        <li>
-                            <a href="./section/tienda.html">TIENDA</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/section/tienda.html">Tienda</a>
                         </li>
                     </ul>
-                </nav>
+                </div>
+            </div>
+        </nav>
     </header>
-    <section class="nosotros container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/primera-carrusel.jpg" class="d-block w-100" alt="foto de la peluqueria por fuera">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/segunda-carrusel.jpg" class="d-block w-100" alt="foto de la peluqueria por dentro">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/tercera-carrusel.png" class="d-block w-100" alt="logo de UrbanStyle">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <section class="nosotros container contenido-1">
             <h2>Quienes somos</h2>
             <img class="radius" src="./img/salonfuera.jpg" alt="salon de Peluquería por fuera">
             <p>
                 Somos un grupo de 5 barberos con muchos años de experiencia, que se dedica a mejorar la estética de los hombres poniendolos a la moda con cortes de cabello, utilizando las mejores y las más nuevas técnicas y herramientas. Nuestro objetivo es hacer que cada visita sea una experiencia única y memorable para nuestros clientes. Nos aseguramos de que se sientan cómodos y relajados mientras están con nosotros, y hacemos todo lo posible para satisfacer sus necesidades y deseos. Además, prestamos mucha atención al detalle y nos esforzamos por mantener nuestro equipo y nuestro espacio limpios y organizados. ¡Esperamos verte pronto en UrbanStyle!    
             </p>
     </section>
-    <section class="pagos container">
+    <section class="pagos container contenido-2">
         <h2>Turnos y pagos</h2>
         <img class="radius" src="/img/personas-salon.jpg" alt="personas dentro del salon">
         <p>
@@ -51,14 +91,14 @@
             El pago se puede realizar en efectivo o con tarjeta de crédito o débito. También ofrecemos paquetes de servicios y ofertas especiales de vez en cuando.
         </p>
     </section>
-    <section class="horarios container">
+    <section class="horarios container contenido-3">
         <h2>Horarios</h2>
         <img class="radius" src="/img/foto-horarios.jpg" alt="persona sentada dentro de la peluquería">
         <p>
             Nuestros horarios de atención al público son de lunes a viernes de 9:00 a.m. a 8:00 p.m. y los sábados de 9:00 a.m. a 6:00 p.m. Cerramos los domingos y los días festivos.
         </p>
     </section>
-    <section class="ubi container">
+    <section class="ubi container contenido-4">
             <h2>Donde estamos</h2>
             <p>
                 Nuestra unica sucursal se encuentra en Av. Lacroze 3852 en Barrio Chacarita, CABA.
@@ -66,10 +106,13 @@
             <img class="radius" src="./img/ubi.png" alt="ubicacion de la Peluquería en google maps">
     </section>
     <footer>
-            <p>REDES</p>
-                <img src="./img/facebook.png" alt="icono letra F facebook">
-                <img src="./img/instagram.png" alt="icono de camara de instagram">
-                <img src="./img/whatsapp.png" alt="icono de telefono whatsapp">
+        <p>© 2023 Ernesto Baldovino - UrbanSyle</p>
+        <div>
+            <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png" alt="icono letra F facebook"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="../img/instagram.png" alt="icono de camara de instagram"></a>
+            <a href="https://www.whatsapp.com" target="_blank"><img src="../img/whatsapp.png" alt="icono de telefono whatsapp"></a>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
