@@ -270,10 +270,13 @@ footer{
             width: max-content;
             overflow: hidden;
         }
-        .historia, .historia2{
-            display: flex;
-            flex-direction: row;
-            min-height: 30vh;
+    }
+    .historia, .historia2{
+        display: flex;
+        flex-direction: row;
+        min-height: 30vh;
+        border-radius: 0;
+        img{
             border-radius: 0;
         }
     }

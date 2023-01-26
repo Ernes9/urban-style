@@ -267,10 +267,13 @@ footer p {
     width: max-content;
     overflow: hidden;
   }
-  .serviciosContainer .historia, .serviciosContainer .historia2 {
+  .historia, .historia2 {
     display: flex;
     flex-direction: row;
     min-height: 30vh;
+    border-radius: 0;
+  }
+  .historia img, .historia2 img {
     border-radius: 0;
   }
 }/*# sourceMappingURL=style.css.map */
