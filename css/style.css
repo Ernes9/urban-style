@@ -123,6 +123,10 @@ h1 {
 }
 
 .tiendaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
   margin-bottom: 15px;
 }
 .tiendaContainer h3 {
