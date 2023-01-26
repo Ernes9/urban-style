@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "h1"
+    "carousel"
+    "contenido-1"
+    "contenido-2"
+    "contenido-3"
+    "contenido-4"
+    "footer";
+    gap: 20px;
+    background: linear-gradient(270deg, rgba(255,231,161,1) 0%, rgba(180,255,251,1) 100%);
+    @media (min-width: 768px){
+        background: linear-gradient(90deg, rgba(255,231,161,1) 0%, rgba(180,255,251,1) 50%, rgba(255,231,161,1) 100%);
+    }
+    @media (min-width: 1024px){
+        background: linear-gradient(135deg, rgba(180,255,251,1) 0%, rgba(255,231,161,1) 100%);
+    }
+}
+
+.carousel, .carousel-inner > .item > img {
+    margin: auto;
+    width: 50%;
+}
+
+header{
+    grid-area: header;
+    background-color: rgb(235, 211, 132);
+    border-bottom: 2px solid black;
+}
+
+.logo{
+    width: 200px;
+    @media (min-width: 768px){
+        width: 200px;
+    }
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    li {
+        list-style-type: none;
+        @media (min-width: 768px){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-family: 'Staatliches', cursive;
+            padding: 3px;
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                padding: 7px;
+                font-size: 20px;
+                background: linear-gradient(to bottom right, rgb(239, 193, 42), rgb(95, 196, 255));
+                border: 1px solid black;
+                color: black;
+            }
+        }
+    }
+}
+
+h1{
+    grid-area: h1;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    @media (min-width: 1024px){
+        margin: 50px;
+        font-size: 64px;
+    }
+}
+
+.radius{
+    border-radius: 15%;
+}
+
+.container{
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(64, 64, 64, 0.476);
+    border: 3px solid #000;
+    h2{
+        color: aliceblue;
+        text-align: center;
+    }
+    p{
+        color: aliceblue;
+        padding: 0 0 10px 20px;
+    }
+    @media (min-width: 1024px){
+        background-color: rgba(0, 0, 0, 0.324);
+        border: 3px solid black;
+    }
+}
+
+.tiendaContainer, .serviciosContainer{
+    min-width: 200px;
+    max-width: 700px;
+}
+
+.tiendaContainer{
+    margin-bottom: 15px;
+    h3{
+        font-size: 24px;
+        font-weight: 900;
+        color: black;
+        text-shadow: 2px 2px 2px white;
+    }
+}
+
+.lavado, .coloracion{
+    margin: auto;
+    margin-top: 20px;
+}
+
+section img, main img, .container img{
+    width: 80%;
+    max-width: 400px;
+    padding: 15px;
+}
+
+.carousel {
+    grid-area: carousel;
+}
+
+.nosotros {
+    grid-area: contenido-1;
+}
+
+.pagos {
+    grid-area: contenido-2;
+}
+
+.horarios {
+    grid-area: contenido-3;
+}
+
+.ubi {
+    grid-area: contenido-4;
+}
+
+.historia {
+    grid-area: contenido-1;
+}
+
+.historia2 {
+    grid-area: contenido-2;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+/* esto es para la seccion tienda y producciones */
+.grilla{
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 1024px){
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+.pelo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    img{
+        margin: 10px;
+        max-width: 300px;
+        width: 30%;
+        padding: 0;
+        border: 4px solid black;
+        box-shadow: 10px 10px 40px 0 #000;
+        @media (min-width: 1024px){
+            :hover{
+                transform: scale(1.2);
+            }
+        transition: 1s all;
+        }
+    }
+}
+
+footer{
+    grid-area: footer;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 44, 106);
+    p{
+        text-align: center;
+        font-family: 'Staatliches', cursive;
+        font-size: 20px;
+        color: aliceblue;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* este grid area es para el index */
+    .inicio {
+        grid-template-areas:
+            "header header"
+            "carousel carousel"
+            "contenido-1 contenido-2"
+            "contenido-3 contenido-4"
+            "footer footer"
+    }
+
+    .nosotros,
+    .pagos,
+    .horarios,
+    .ubi {
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* acá usé grid para ordenar la sección "servicios". */
+    .servicios-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .cortes {
+        grid-column: 3 / 4;
+        grid-row: 1;
+    }
+
+    .lavado {
+        grid-column: 4 / 5;
+        grid-row: 2;
+    }
+
+    .coloracion {
+        grid-column: 3 / 4;
+        grid-row: 3;
+    }
+
+    .serviciosContainer {
+        width: 40vw;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        img{
+            width: max-content;
+            overflow: hidden;
+        }
+        .historia, .historia2{
+            display: flex;
+            flex-direction: row;
+            min-height: 30vh;
+            border-radius: 0;
+        }
+    }
+}
