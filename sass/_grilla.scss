@@ -1,0 +1,86 @@
+body{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "h1"
+    "carousel"
+    "contenido-1"
+    "contenido-2"
+    "contenido-3"
+    "contenido-4"
+    "footer";
+    gap: 20px;
+}
+
+.carousel {
+    grid-area: carousel;
+}
+
+.nosotros {
+    grid-area: contenido-1;
+}
+
+.pagos {
+    grid-area: contenido-2;
+}
+
+.horarios {
+    grid-area: contenido-3;
+}
+
+.ubi {
+    grid-area: contenido-4;
+}
+
+.historia {
+    grid-area: contenido-1;
+}
+
+.historia2 {
+    grid-area: contenido-2;
+}
+
+/* esto es para la seccion tienda y producciones */
+.grilla{
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 1024px){
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* este grid area es para el index */
+    .inicio {
+        grid-template-areas:
+            "header header"
+            "carousel carousel"
+            "contenido-1 contenido-2"
+            "contenido-3 contenido-4"
+            "footer footer"
+    }
+        /* acá usé grid para ordenar la sección "servicios". */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    
+        .cortes {
+            grid-column: 3 / 4;
+            grid-row: 1;
+        }
+    
+        .lavado {
+            grid-column: 4 / 5;
+            grid-row: 2;
+        }
+    
+        .coloracion {
+            grid-column: 3 / 4;
+            grid-row: 3;
+        }
+}

@@ -1,0 +1,42 @@
+header{
+    grid-area: header;
+    background-color: rgb(235, 211, 132);
+    border-bottom: 2px solid black;
+}
+
+.logo{
+    width: 200px;
+    @media (min-width: 768px){
+        width: 200px;
+    }
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    li {
+        list-style-type: none;
+        @media (min-width: 768px){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .nav-link {
+            text-decoration: none;
+            font-family: 'Staatliches', cursive;
+            padding: 3px;
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                padding: 7px;
+                font-size: 20px;
+                background: linear-gradient(to bottom right, rgb(239, 193, 42), rgb(95, 196, 255));
+                border: 1px solid black;
+                color: black;
+            }
+        }
+    }
+}
