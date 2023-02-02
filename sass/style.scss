@@ -151,28 +151,6 @@ footer{
         flex-direction: column;
         justify-content: center;
     }
-
-    /* acá usé grid para ordenar la sección "servicios". */
-    .servicios-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-
-    .cortes {
-        grid-column: 3 / 4;
-        grid-row: 1;
-    }
-
-    .lavado {
-        grid-column: 4 / 5;
-        grid-row: 2;
-    }
-
-    .coloracion {
-        grid-column: 3 / 4;
-        grid-row: 3;
-    }
-
     .serviciosContainer {
         @include sizes(40vw, 400px);
         display: flex;
